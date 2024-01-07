@@ -38,15 +38,15 @@ You will find some commented lines and files, we will use them in the next steps
 
 Let's verify that everything is up and running by accessing the web interface of ArgoCD.
 
-* Get the auto-generated password for the 'admin' user  
+- Get the auto-generated password for the 'admin' user  
   `kubectl get secret -n argocd argocd-initial-admin-secret --template={{.data.password}} | base64 --decode`
-* Port forward to the Argo CD server. This will bing your local port to ArgoCD  
+  `kubectl get secret -n argocd argocd-initial-admin-secret -o json`(Windows)
+- Port forward to the Argo CD server. This will bing your local port to ArgoCD  
   `kubectl port-forward svc/argocd-server -n argocd 8080:443`
-* Login on [localhost:8080](http://localhost:8080) with username `admin` and password from previous step
+- Login on [localhost:8080](http://localhost:8080) with username `admin` and password from previous step
 
 ## Login CLI (optional)
 
 Optionally, you can also install the ArgoCD CLI and then log in using:
 
 `argocd login localhost:8080`
-
