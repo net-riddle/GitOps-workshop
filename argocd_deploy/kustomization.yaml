@@ -6,8 +6,8 @@ bases:
 
 resources:
   - resources/namespace.yaml
-  - apps/argocd.yaml # Edit the file before applying!
-    #- apps/kube_prometheus_stack.yaml # Edit the file before applying!
+  - apps/argocd.yaml
+  - apps/kube_prometheus_stack.yaml
 
 patchesStrategicMerge:
   - overlays/argocd-cm.yaml
